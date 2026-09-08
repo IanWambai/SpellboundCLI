@@ -34,6 +34,7 @@ jobs:
 
   # CI to validate on different os/targets
   lint_build_test:
+    if: ${{ false }} # Full platform builds/tests run through local/owned tooling.
     name: ${{ matrix.runner }} - ${{ matrix.target }}
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 30

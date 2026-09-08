@@ -66,9 +66,11 @@ jobs:
         run: pnpm run typecheck
 
       - name: Build
+        if: ${{ false }} # Run the existing local build/release commands explicitly.
         run: pnpm run build
 
       - name: Ensure staging a release works.
+        if: ${{ false }} # Run the existing local build/release commands explicitly.
         working-directory: codex-cli
         env:
           GH_TOKEN: ${{ github.token }}

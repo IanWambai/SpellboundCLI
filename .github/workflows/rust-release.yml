@@ -49,6 +49,8 @@ jobs:
           echo "::endgroup::"
 
   build:
+    # Disabled by estate policy; use owned/local production tooling.
+    if: ${{ false }}
     needs: tag-check
     name: ${{ matrix.runner }} - ${{ matrix.target }}
     runs-on: ${{ matrix.runner }}
@@ -124,6 +126,8 @@ jobs:
           path: codex-rs/dist/${{ matrix.target }}/*
 
   release:
+    # Disabled by estate policy; use owned/local production tooling.
+    if: ${{ false }}
     needs: build
     name: release
     runs-on: ubuntu-24.04
